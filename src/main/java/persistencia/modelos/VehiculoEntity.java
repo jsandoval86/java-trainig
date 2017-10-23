@@ -25,7 +25,7 @@ public class VehiculoEntity {
 	
 	@OneToOne
 	@JoinColumn(name="tipo_vehiculo_id", referencedColumnName="id", nullable=false)
-	private TipoVehiculoEntity tipoVehiculo;
+	private TipoVehiculoEntity tipo;
 	
 	public VehiculoEntity() {
 	}
@@ -54,12 +54,12 @@ public class VehiculoEntity {
 		this.cilindraje = cilindraje;
 	}
 
-	public TipoVehiculoEntity getTipoVehiculo() {
-		return tipoVehiculo;
+	public TipoVehiculoEntity getTipo() {
+		return tipo;
 	}
 
-	public void setTipoVehiculo(TipoVehiculoEntity tipoVehiculo) {
-		this.tipoVehiculo = tipoVehiculo;
+	public void setTipo(TipoVehiculoEntity tipoVehiculo) {
+		this.tipo = tipoVehiculo;
 	}
 		
 }

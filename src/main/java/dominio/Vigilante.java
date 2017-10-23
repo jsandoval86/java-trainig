@@ -49,7 +49,7 @@ public class Vigilante {
 	private boolean capacidadParqueaderoDisponible(Vehiculo vehiculo) {
 		int numeroDeVehiculosRegistrados = sistemaPersistencia
 				.repositorioRegistro().obtenerCupoPorTipo(vehiculo);
-		
+
 		if (this.parqueadero.getCapacidadPorTipo(vehiculo) > 
 			numeroDeVehiculosRegistrados) {
 			return true;

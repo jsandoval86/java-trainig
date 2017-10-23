@@ -34,14 +34,14 @@ public class RepositorioRegistro implements IRepositorioRegistro {
 	}
 
 	public int obtenerCupoPorTipo(Vehiculo vehiculo) {
-		int numeroDeVehiculosRegistrados = 0;
+		long numeroDeVehiculosRegistrados = 0;
 		Query query = this.entityManager
-				.createQuery("SELECT COUNT(registro) FROM RegistroEntity registro WHERE registro.vehiculo.tipo = :tipo AND registro.fechaSalida IS NULL")
-				.setParameter(":tipo", vehiculo.getTipo());
+				.createQuery("SELECT COUNT(registro) FROM RegistroEntity registro WHERE registro.vehiculo.tipo.id = :tipo AND registro.fechaSalida IS NULL")
+				.setParameter("tipo", vehiculo.getTipo());
 		 
-		numeroDeVehiculosRegistrados = (Integer) query.getSingleResult();
+		numeroDeVehiculosRegistrados = (Long) query.getSingleResult();
 		
- 		return numeroDeVehiculosRegistrados;
+ 		return (int) numeroDeVehiculosRegistrados;
 	}
 	
 	
